@@ -1,0 +1,524 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin reviewtext($reviewcolor, $reviewbackground, $reviewpadd...) {
+    .review__block {
+        padding: $reviewpadd;
+        background-color: $reviewbackground;
+        &__wrapper {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        &__date, &__author, &__author::before {
+            font-family: Gotham;
+            font-size: 13px;
+            color: $reviewcolor;
+        }
+
+        &__author::before {
+            content: '|';
+            margin: 0 12px;
+        }
+
+        &__heading {
+            font-family: Gotham;
+            font-size: 25px;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: $reviewcolor;
+            margin-bottom: 33px;
+        }
+        &__group {
+            &__text {
+                width: 469px;
+                font-family: Gotham;
+                font-size: 15px;
+                line-height: 1.6em;
+                color: $reviewcolor;
+                &:first-child {
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
+}
+
+.section__title {
+    text-align: center;
+}
+
+@mixin sectiontitle($headingcolor, $decorationcolor) {
+    &__picture {
+        position: relative;
+        margin-bottom: 115px;
+        &__heading {
+            font-family: Gotham;
+            text-transform: uppercase;
+            font-size: 37.5px;
+            font-weight: 500;
+            color: $headingcolor;
+        }
+    
+        &__decoration {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: $decorationcolor;
+            opacity: 0.18;
+            font-family: Roboto;
+            text-transform: uppercase;
+            font-size: 247px;
+            font-weight: bold;
+            font-stretch: condensed;
+            line-height: 0;
+            user-select: none;
+        }
+    }
+}
+
+@mixin sectiontitletext($textcolor) {
+    &__text {
+        font-family: Gotham;
+        font-size: 30px;
+        color: $textcolor;
+    }
+}
+
+$maincolor: #11749e;
+
+.container {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+//header
+
+.header {
+    background: url('../img/fullscreen.webp') center center / cover no-repeat;
+    &__top {
+        padding: 30px 0 18px;
+        border-bottom: 1px solid rgba($color: #fff, $alpha: 0.3);
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__logo {
+        width: 67px;
+        height: 67px;
+        cursor: pointer;
+        background-color: rgba($color: #fff, $alpha: 0.6)
+    }
+    &__picture {
+        position: relative;
+        right: 10px;
+        bottom: 10px;
+        width: 100%;
+        height: 100%;
+        background-color: $maincolor;
+        &__element {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Open Sans';
+            font-size: 30px;
+            font-weight: bold;
+            color: #f5f5f5;
+        }
+    }
+    &__menu {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        list-style-type: none;
+        &__item {
+            margin-right: 50px;
+        }
+        &__link {
+            position: relative;
+            font-family: 'Open Sans';
+            font-size: 20px;
+            color: #fff;
+            text-decoration: none;
+            line-height: 0;
+            transition: .3s linear;
+            padding-bottom: 35px;
+            &.active {
+                color: $maincolor;
+                border-bottom: 6px solid $maincolor; 
+            }
+            &:hover {
+                color: $maincolor;
+            }
+        }
+        &__icon__link {
+            font-size: 17px;
+            color: #f5f5f5;
+            text-decoration: none;
+            margin-right: 25px;
+            transition: .3s linear;
+            &:last-child {
+                margin: 0;
+            }
+            &:hover {
+                color: $maincolor;
+            }
+        }
+    }
+
+    &__banner {
+        padding: 245px 0 109px;
+        text-align: center;
+        &__heading__first {
+            font-family: Gotham;
+            font-size: 151px;
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+            color: #f5f5f5;
+            margin-bottom: 3px;
+        }
+        &__heading__second {
+            font-family: Gotham;
+            font-size: 25.5px;
+            font-weight: 500;
+            letter-spacing: 0.74em;
+            text-transform: uppercase;
+            color: $maincolor;
+            margin-bottom: 115px;
+        }
+        &__scroll {
+            display: block;
+            &__text {
+                font-family: 'Open Sans';
+                font-size: 13px;
+                color: #fff;
+                margin-bottom: 20px;
+            }
+
+            &__picture{
+                z-index: 100;
+                display: block;
+                position: relative;
+                margin: 0 auto;
+                width: 65px;
+                height: 65px;
+                border: solid 1px #fff;
+                border-radius: 50%;
+                animation: levitate 1s ease infinite alternate;
+                @keyframes levitate {
+                    from {
+                        bottom: 0;
+                    }
+                    to {
+                        bottom: -25px;
+                    }
+                }
+            }
+
+            &__img {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+//header end
+
+//awesome
+
+.awesome {
+    padding: 165px 0 125px;
+    background-color: $maincolor;
+    .section__title {
+        @include sectiontitle(#fff, #fff);
+        margin-bottom: 140px;
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__block {
+        max-width: 260px;
+        color: #fff;
+        text-align: center;
+        &__picture {
+            position: relative;
+            width: 133px;
+            height: 133px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: #2e85aa;
+        }
+        &__img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &__heading {
+            font-family: Gotham;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+        &__text {
+            font-family: Gotham;
+            font-size: 15px;
+            line-height: 1.6em;
+        }
+    }
+}
+
+.review__wrapper {
+    display: flex;
+    &__img, .review__block {
+        width: 50%;
+    }
+}
+
+.review__wrapper.first {
+    @include reviewtext(#fff, #333, 80px 0 105px 115px);
+}
+
+.review__wrapper.second {
+    @include reviewtext(#222, #e4e4e4, 80px 0 105px 81px);
+}
+
+.blog {
+    padding: 160px 0 105px;
+    .section__title {
+        @include sectiontitle(#222, #222);
+        @include sectiontitletext(#222);
+        margin-bottom: 110px;
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__block {
+        max-width: 270px;
+        text-align: center;
+        &__img {
+            display: block;
+            margin-bottom: 40px;
+            max-height: 280px;
+        }
+        &__heading {
+            font-family: Gotham;
+            font-size: 18px;
+            font-weight: 500;
+            color: $maincolor;
+            margin-bottom: 23px;
+        }
+        &__text {
+            font-family: Gotham;
+            font-size: 15px;
+            line-height: 1.6em;
+            color: #222;
+        }
+    }
+}
+
+.comments {
+    padding: 100px 0 130px;
+    background-color: $maincolor;
+    .comments__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    .comments__block {
+        display: flex;
+        align-items: flex-start;
+        &__img {
+            margin-right: 34px;
+        }
+        &__text {
+            width: 449px;
+            font-family: Gotham;
+            font-size: 15px;
+            line-height: 1.6em;
+            color: #fff;
+        }
+    }
+}
+
+.advantages {
+    padding: 100px 0;
+    background: url('../img/bg2.webp') center top / cover no-repeat;
+    .advantages__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .advantages__block {
+        &__heading {
+            font-family: Gotham;
+            font-size: 25px;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 35px;
+        }
+        &__text {
+            width: 469px;
+            font-family: Gotham;
+            font-size: 15px;
+            line-height: 1.6em;
+            color: #fff;
+            margin-bottom: 65px;
+        }
+    }
+    .advantages__group {
+        &__diagram {
+            width: 370px;
+            background-color: $maincolor;
+            padding: 10px 0 10px 19px;
+            margin-bottom: 24px;
+            &:nth-child(2) {
+                width: 400px;
+            }
+            &:last-child {
+                width: 430px;
+                margin: 0;
+            }
+            &__text {
+                font-family: Gotham;
+                font-size: 15px;
+                font-weight: 500;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.team {
+    padding: 135px 0 125px;
+    .section__title {
+        margin-bottom: 65px;
+        @include sectiontitle(#222, #222);
+        @include sectiontitletext(#222);
+    }
+    .team__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    .team__block {
+        max-width: 270px;
+        position: relative;
+        &__img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+            height: 400px;
+        }
+        &__picture {
+            width: 216px;
+            padding: 20px 0 50px;
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            text-align: center;
+            background-color: #fff;
+            &__heading {
+                font-family: Gotham;
+                font-size: 20px;
+                font-weight: 500;
+                text-transform: uppercase;
+                line-height: 1.2;
+                color: $maincolor;
+                margin-bottom: 8px;
+            }
+            &__text {
+                font-family: Gotham;
+                font-size: 15px;
+                font-weight: 500;
+                color: #000;
+            }
+        }
+    }
+}
+
+.feedback {
+    background: url('../img/bg3.webp') center top / cover no-repeat;
+    padding: 220px 0 100px;
+    .section__title {
+        @include sectiontitle(#fff, #fff);
+        margin-bottom: 145px;
+    }
+    .feedback__form {
+        &__group {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 45px;
+        }
+        &__input, &__textarea {
+            background-color: transparent;
+            border: 1px solid #fff;
+            font-family: Gotham;
+            font-size: 15px;
+            &::placeholder {
+                color: #fff;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+        &__input {
+            padding: 14px 0 14px 20px;
+            width: 32%;
+            margin-bottom: 39px;
+        }
+        &__textarea {
+            width: 100%;
+            padding: 17px 0 100px 20px;
+            resize: none;
+        }
+        &__button {
+            display: block;
+            width: 227px;
+            margin: 0 auto;
+            padding: 20px 0;
+            background-color: $maincolor;
+            border: none;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: Gotham;
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+.map {
+    height: 335px;
+}
+
+.footer {
+    padding: 45px 0;
+    background-color: #222;
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__credit {
+        font-family: Roboto;
+        font-size: 13px;
+        color: #fff;
+    }
+}
