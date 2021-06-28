@@ -1,0 +1,62 @@
+@font-face {
+    font-family: Gotham;
+    src: url('../fonts/Gotham-Book.ttf') format('truetype'),
+         url('../fonts/Gotham-Book.woff') format('woff'),
+         url('../fonts/Gotham-Book.woff2') format('woff2');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Gotham;
+    src: url('../fonts/GothamPro-Bold.ttf') format('truetype'),
+         url('../fonts/GothamPro-Bold.woff') format('woff'),
+         url('../fonts/GothamPro-Bold.woff2') format('woff2');
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Gotham;
+    src: url('../fonts/GothamPro-Medium.ttf') format('truetype'),
+         url('../fonts/GothamPro-Medium.woff') format('woff'),
+         url('../fonts/GothamPro-Medium.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Bold.ttf') format('truetype'),
+         url('../fonts/OpenSans-Bold.woff') format('woff'),
+         url('../fonts/OpenSans-Bold.woff2') format('woff2');
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Regular.ttf') format('truetype'),
+         url('../fonts/OpenSans-Regular.woff') format('woff'),
+         url('../fonts/OpenSans-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('../fonts/Roboto-Bold.ttf') format('truetype'),
+         url('../fonts/Roboto-Bold.woff') format('woff'),
+         url('../fonts/Roboto-Bold.woff2') format('woff2');
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype'),
+         url('../fonts/Roboto-Regular.woff') format('woff'),
+         url('../fonts/Roboto-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-weight: normal;
+}
